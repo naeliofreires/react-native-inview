@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import {
   View,
@@ -43,6 +43,7 @@ class InView extends Component{
   stopWatching() {
     this.interval = clearInterval(this.interval)
   }
+  
   check() {
     let win = Dimensions.get('window')
     let el = this.refs.myview
@@ -78,10 +79,11 @@ InView.defaultProps = {
   active: true,
   delay: 100,
 }
+
 InView.propTypes = {
   onChange: PropTypes.func.isRequired,
   active: PropTypes.bool,
   delay: PropTypes.number
 }
 
-module.exports = InView
+export default InView;
